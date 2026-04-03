@@ -121,3 +121,7 @@ Tests use `Langfuse::fake()` to verify behavior without real API calls.
 
 - [echolabsdev/prism](https://github.com/echolabsdev/prism) - A powerful Laravel package for building LLM-powered applications
 - [axyr/laravel-langfuse](https://github.com/axyr/laravel-langfuse) - Langfuse PHP SDK for Laravel with auto-instrumentation for Prism
+
+## Author
+
+Built by [Martijn van Nieuwenhoven](https://martijnvannieuwenhoven.com) - Laravel developer specializing in AI integrations and observability tooling.
