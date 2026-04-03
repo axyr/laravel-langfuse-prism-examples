@@ -1,0 +1,24 @@
+<?php
+
+namespace {{ namespace }};
+
+class {{ class }}
+{
+    /**
+     * Get the system prompt for the agent.
+     */
+    public static function systemPrompt(): string
+    {
+        return 'You are a helpful assistant.';
+    }
+
+    /**
+     * Get the tools available to the agent (optional).
+     *
+     * @return \Prism\Prism\Tool[]
+     */
+    public static function tools(): array
+    {
+        return [];
+    }
+}

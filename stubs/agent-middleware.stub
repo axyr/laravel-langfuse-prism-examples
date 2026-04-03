@@ -1,0 +1,21 @@
+<?php
+
+namespace {{ namespace }};
+
+use Closure;
+use Prism\Prism\ValueObjects\Messages\AssistantMessage;
+
+class {{ class }}
+{
+    /**
+     * Handle Prism middleware.
+     */
+    public function __invoke(array $messages, Closure $next): AssistantMessage
+    {
+        // Process before Prism call
+        $response = $next($messages);
+
+        // Process after Prism call
+        return $response;
+    }
+}

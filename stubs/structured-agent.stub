@@ -1,0 +1,31 @@
+<?php
+
+namespace {{ namespace }};
+
+class {{ class }}
+{
+    /**
+     * Get the system prompt for the agent.
+     */
+    public static function systemPrompt(): string
+    {
+        return 'You are a helpful assistant that returns structured data.';
+    }
+
+    /**
+     * Get the structured output schema.
+     */
+    public static function schema(): array
+    {
+        return [
+            'type' => 'object',
+            'properties' => [
+                'value' => [
+                    'type' => 'string',
+                    'description' => 'A value field',
+                ],
+            ],
+            'required' => ['value'],
+        ];
+    }
+}
