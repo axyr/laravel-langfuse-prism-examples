@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Ai\Tools;
 
+use Prism\Prism\Schema\StringSchema;
 use Prism\Prism\Tool;
 use Prism\Prism\ValueObjects\ToolError;
 use Prism\Prism\ValueObjects\ToolOutput;
@@ -20,17 +21,13 @@ class SearchWeb extends Tool
         return 'Search the web for information on a given query. Returns relevant search results.';
     }
 
+    /**
+     * @return array<string, \Prism\Prism\Contracts\Schema>
+     */
     public function parameters(): array
     {
         return [
-            'type' => 'object',
-            'properties' => [
-                'query' => [
-                    'type' => 'string',
-                    'description' => 'The search query',
-                ],
-            ],
-            'required' => ['query'],
+            'query' => new StringSchema('query', 'The search query'),
         ];
     }
 

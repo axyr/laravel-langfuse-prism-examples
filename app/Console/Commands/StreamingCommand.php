@@ -7,9 +7,9 @@ namespace App\Console\Commands;
 use App\Ai\Agents\StoryTeller;
 use App\Console\Commands\Concerns\FormatsExampleOutput;
 use Axyr\Langfuse\LangfuseFacade as Langfuse;
+use Illuminate\Console\Command;
 use Prism\Prism\Facades\Prism;
 use Prism\Prism\Streaming\Events\TextDeltaEvent;
-use Illuminate\Console\Command;
 
 class StreamingCommand extends Command
 {

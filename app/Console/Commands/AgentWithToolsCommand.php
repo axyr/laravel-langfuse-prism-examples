@@ -7,8 +7,8 @@ namespace App\Console\Commands;
 use App\Ai\Agents\ResearchAssistant;
 use App\Console\Commands\Concerns\FormatsExampleOutput;
 use Axyr\Langfuse\LangfuseFacade as Langfuse;
-use Prism\Prism\Facades\Prism;
 use Illuminate\Console\Command;
+use Prism\Prism\Facades\Prism;
 
 class AgentWithToolsCommand extends Command
 {

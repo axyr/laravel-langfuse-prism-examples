@@ -10,8 +10,8 @@ use Axyr\Langfuse\Dto\ScoreBody;
 use Axyr\Langfuse\Dto\TraceBody;
 use Axyr\Langfuse\Enums\ScoreDataType;
 use Axyr\Langfuse\LangfuseFacade as Langfuse;
-use Prism\Prism\Facades\Prism;
 use Illuminate\Console\Command;
+use Prism\Prism\Facades\Prism;
 
 class ScoringCommand extends Command
 {

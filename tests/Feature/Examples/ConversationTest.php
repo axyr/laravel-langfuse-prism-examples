@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use Axyr\Langfuse\LangfuseFacade as Langfuse;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Prism\Prism\Facades\Prism;
 use Prism\Prism\Testing\TextResponseFake;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
 

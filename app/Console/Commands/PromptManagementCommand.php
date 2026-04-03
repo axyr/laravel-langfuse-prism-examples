@@ -9,8 +9,8 @@ use App\Console\Commands\Concerns\FormatsExampleOutput;
 use Axyr\Langfuse\Dto\CreatePromptBody;
 use Axyr\Langfuse\Dto\TraceBody;
 use Axyr\Langfuse\LangfuseFacade as Langfuse;
-use Prism\Prism\Facades\Prism;
 use Illuminate\Console\Command;
+use Prism\Prism\Facades\Prism;
 
 class PromptManagementCommand extends Command
 {

@@ -6,6 +6,9 @@ namespace App\Ai\Agents;
 
 class Tutor
 {
+    /**
+     * @var array<int, array{role: string, content: string}>
+     */
     private array $conversationHistory = [];
 
     public static function systemPrompt(): string
@@ -23,6 +26,9 @@ class Tutor
         $this->conversationHistory[] = ['role' => $role, 'content' => $content];
     }
 
+    /**
+     * @return array<int, array{role: string, content: string}>
+     */
     public function getHistory(): array
     {
         return $this->conversationHistory;

@@ -29,23 +29,23 @@ class SentimentAnalyzer
             properties: [
                 new StringSchema(
                     name: 'sentiment',
-                    description: 'The overall sentiment: positive, negative, or neutral'
+                    description: 'The overall sentiment: positive, negative, or neutral',
                 ),
                 new NumberSchema(
                     name: 'confidence',
-                    description: 'Confidence score between 0 and 1'
+                    description: 'Confidence score between 0 and 1',
                 ),
                 new ArraySchema(
                     name: 'key_phrases',
                     description: 'Array of key phrases from the text',
-                    items: new StringSchema('phrase', '')
+                    items: new StringSchema('phrase', ''),
                 ),
                 new StringSchema(
                     name: 'summary',
-                    description: 'Brief summary of the sentiment analysis'
+                    description: 'Brief summary of the sentiment analysis',
                 ),
             ],
-            requiredFields: ['sentiment', 'confidence', 'key_phrases', 'summary']
+            requiredFields: ['sentiment', 'confidence', 'key_phrases', 'summary'],
         );
     }
 }

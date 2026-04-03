@@ -18,6 +18,9 @@ class ResearchAssistant
         INSTRUCTIONS;
     }
 
+    /**
+     * @return array<int, \Prism\Prism\Tool>
+     */
     public static function tools(): array
     {
         return [

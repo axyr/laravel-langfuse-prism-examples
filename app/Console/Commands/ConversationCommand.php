@@ -8,8 +8,10 @@ use App\Ai\Agents\Tutor;
 use App\Console\Commands\Concerns\FormatsExampleOutput;
 use Axyr\Langfuse\Dto\TraceBody;
 use Axyr\Langfuse\LangfuseFacade as Langfuse;
-use Prism\Prism\Facades\Prism;
 use Illuminate\Console\Command;
+use Prism\Prism\Facades\Prism;
+use Prism\Prism\ValueObjects\Messages\AssistantMessage;
+use Prism\Prism\ValueObjects\Messages\UserMessage;
 
 class ConversationCommand extends Command
 {
@@ -35,7 +37,6 @@ class ConversationCommand extends Command
             'How does this relate to testing? Can you show how DI makes testing easier?',
         ];
 
-        $tutor = new Tutor();
         $messages = [];
 
         foreach ($turns as $index => $question) {
@@ -53,7 +54,7 @@ class ConversationCommand extends Command
             Langfuse::setCurrentTrace($trace);
 
             // Add user message to history
-            $messages[] = ['role' => 'user', 'content' => $question];
+            $messages[] = new UserMessage($question);
 
             $response = Prism::text()
                 ->using('anthropic', 'claude-sonnet-4-6')
@@ -62,7 +63,7 @@ class ConversationCommand extends Command
                 ->asText();
 
             // Add assistant response to history
-            $messages[] = ['role' => 'assistant', 'content' => $response->text];
+            $messages[] = new AssistantMessage($response->text);
 
             $trace->update(new TraceBody(output: $response->text));
 

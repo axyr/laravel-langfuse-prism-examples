@@ -10,8 +10,8 @@ use App\Console\Commands\Concerns\FormatsExampleOutput;
 use Axyr\Langfuse\Dto\SpanBody;
 use Axyr\Langfuse\Dto\TraceBody;
 use Axyr\Langfuse\LangfuseFacade as Langfuse;
-use Prism\Prism\Facades\Prism;
 use Illuminate\Console\Command;
+use Prism\Prism\Facades\Prism;
 
 class MultiAgentCommand extends Command
 {
